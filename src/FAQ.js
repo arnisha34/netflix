@@ -1,7 +1,12 @@
+import { Col, Row } from "react-bootstrap"
 
 const FAQ = () => {
   return(
-    <h2>Frequently Asked Questions</h2>
+    <Row className="sign-in-card">
+      <Col>
+        <h2 className="card-title-h2 text-center">Frequently Asked Questions</h2>
+      </Col>
+    </Row>
   )
 }
 

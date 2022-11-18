@@ -1,22 +1,198 @@
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+:root{
+  --black: #000;
+  --dark-gray: #737373;
+  --royal-blue: #0071eb;
+  --netflix-red: #e50914;
+  --white: #fff;
+}
+
+/* global elements */
+button.redButton,
+button.redButton:hover{
+  background-color: var(--netflix-red);
+  border: none;
+  border-radius: 3px;
+  font-weight: 400;
+  line-height: normal;
+  padding: 7px 17px;
+}
+
+
 html{
-  font-family: 'Bebas Neue', cursive;
+  background-color: var(--black);
+  font-family: 'Bebas Neue',Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
 }
 
 .App{
-  background-color: #000;
-  color: #fff;
+  background-color: var(--black);
+  box-sizing: border-box;
+  width: 100vw;
   height: 100vh;
 }
 
-.logo{
-  width: 10%;
+/* Navigation */
+
+.nav{
+  position: absolute;
+  z-index: 10;
+  width: 100%;
 }
+
+.logo{
+  max-width: 170px;
+}
+
+/* Signin/Signup */
 
 .top-header{
   font-size: 4rem;
 }
-=======
->>>>>>> 8e6ac9ab5f677bdb4e4e0836d526192c615058a2
+
+.hero-container{
+  background: url(../public/images/signup_header.jpg) top no-repeat;
+  background-size: cover;
+  color: var(--white);
+  height: 100%;
+  max-height: 800px;
+  position: relative;
+}
+
+.hero-container::before{
+  content: "";
+  background-color: rgba(0,0,0,.4);
+  background-image: linear-gradient(0deg,rgba(0,0,0,.8) 0,transparent 60%,rgba(0,0,0,.8));  
+  height: inherit;
+  width: 100vw;
+  position: absolute;
+}
+
+.hero-content{
+  max-width: 800px !important;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-container,
+.sign-in-card{
+  border-bottom: 8px solid #222;
+}
+
+.sign-in-card{
+  color: var(--white);
+  padding: 45px;
+}
+
+.left-card,
+.right-card{
+  max-width: 1100px;
+}
+
+.card-title-h2{
+  font-size: 3.125rem;
+  line-height: 1.1;
+  margin-bottom: .5rem;
+}
+
+.card-title-h3{
+  font-size: 1.625rem;
+  font-weight: 400;
+  line-height: 1.4em;
+}
+
+#tv,
+#devices,
+#kids-profiles,
+#download{
+  position: relative;
+  overflow: hidden;
+}
+
+#tv img,
+#devices img, 
+#kids-profiles img,
+#download img{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 530px;
+}
+
+#devices img{
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  height: auto;
+}
+
+#video-tv{
+  position: absolute;
+  left: 278px;
+  top: 48%;
+  transform: translate(-50%, -50%);
+}
+
+#video-devices{
+  position: absolute;
+  left: 278px;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  max-height: 190px;
+}
+
+#download-animation{
+  background-color: var(--black);
+  border: 2px solid hsla(0,0%,100%,.25);
+  border-radius: .75em;
+  box-shadow: 0 0 2em 0 #000;
+  padding: 8px;
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 60%;
+}
+
+#download-animation img{
+  width: 50px;
+}
+
+#download-text > p{
+  line-height: 1.2em;
+  margin-bottom: 0;
+}
+
+#download-text .text-2{
+  color: var(--royal-blue);
+  font-size: 0.875em;
+}
+
+/* Footer */
+
+#footer,
+.telephone,
+.telephone:hover{
+  color: var(--dark-gray);
+}
+
+.telephone,
+.telephone:hover {
+  text-decoration: none;
+}
+
+#footer-links ul{
+  padding: 0;
+}
+
+#footer-links li{
+  display: inline-block;
+  font-size: 0.75em;
+  margin-bottom: 16px;
+  padding: 0 12px 0 0;
+  width: 25%;
+}
+
