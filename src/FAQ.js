@@ -1,18 +1,21 @@
-import { Col, Row } from "react-bootstrap"
+import { Button, Col, Form, InputGroup, Row } from "react-bootstrap"
 import { faqData } from "./FAQData"
 import {GrAdd} from "react-icons/gr"
 import { useState } from "react"
+import { HiChevronRight } from 'react-icons/hi'
+
 
 const FAQ = () => {
 
-  const [active, setActive] = useState(false)
-  const [toggle, setToggle] = useState([]);
+  const [active, setActive] = useState([])
+  const [toggle, setToggle] = useState(false);
   
   const selected = faqData.map(item => item.id);
+  
 
   const handleClick = (id) => {
-    setActive(!active);
-    setToggle(selected.find(item => item === id));
+    setToggle(!toggle);
+    setActive(selected.find(item => item === id));
   }
 
   return(
@@ -25,16 +28,28 @@ const FAQ = () => {
           </Row>
           <Row className="faq-container mx-auto">
             <Col>
-              <ul className="faq-list">
+              <ul className="faq-list mb-5">
                 {faqData.map((item, id) => {
                   return(
                   <li key={item.id} className="faq-list-item">
-                    <button className={`faq-question border-0 text-start position-relative ${active === true ? "active" : ""}`} onClick={() => handleClick(id)}>{item.question} <GrAdd className="plus-icon position-absolute"/></button>
-                    <div className={`faq-answer ${toggle === id && !active ? "open" : "closed"}`}>{item.answer}</div>
+                    <button className="faq-question border-0 text-start position-relative" onClick={(e) => handleClick(id)}>{item.question} <GrAdd className={`plus-icon position-absolute ${active === id ? "open" : ""}`}/></button>
+                    <div className={`faq-answer ${active === id ? "open" : ""}`}>
+                      <span>{item.answer}</span>
+                    </div>
                   </li>
                   )})}
-
               </ul>
+              <h5 className="mb-4 text-center">Ready to watch? Enter your email to create or restart your membership.</h5>
+              <InputGroup className="mb-3 signup">
+                <Form.Control
+                  placeholder="Email address"
+                  aria-label="Email address"
+                  aria-describedby="basic-addon2"
+                />
+                <Button variant="outline-secondary" className="redButton">
+                  Get Started <HiChevronRight />
+                </Button>
+              </InputGroup>
             </Col>
           </Row>
       </Col>
