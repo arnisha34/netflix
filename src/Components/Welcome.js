@@ -1,9 +1,11 @@
 import { Row, Col } from "react-bootstrap";
-import FAQ from "./FAQ";
+import FAQ from "../Components/FAQ";
+import Hero from "../Components/Hero";
 
 const Welcome = () => {
   return (
     <>
+    <Hero />
       <Row className="sign-in-card">
         <Col>
           <Row className="left-card align-items-center justify-content-center mx-auto">

@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <>
       <Row className="hero-container justify-content-center align-content-center">  
-        <Col className="hero-content text-center" lg={5}>
+        <Col className="hero-content text-center">
           <h1 className="top-header">Unlimited movies, TV shows, and more.</h1>
           <h3 className="mt-3 mb-5">Watch anywhere. Cancel anytime.</h3>
           <h5 className="mb-4">Ready to watch? Enter your email to create or restart your membership.</h5>

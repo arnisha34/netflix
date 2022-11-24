@@ -1,17 +1,27 @@
 import { Container } from "react-bootstrap";
-import Nav from "./Nav";
-import Hero from "./Hero";
-import Welcome from "./Welcome";
-import Footer from "./Footer";
+import { Routes, Route } from "react-router-dom"
+import Nav from "./Components/Nav";
+import Welcome from "./Components/Welcome";
+import Footer from "./Components/Footer";
+import Login from "./Components/Login";
+import Context from './Components/Context';
+import { useState } from "react";
 
 function App() {
+
+  const [loggedIn, setLoggedIn] = useState(true)
+  
   return (
-    <Container className="App" fluid>
-      <Nav />
-      <Hero />
-      <Welcome />
-      <Footer />
-    </Container>
+    <Context.Provider value={{loggedIn, setLoggedIn}}>
+      <Container className="App" fluid>
+        <Nav />
+        <Routes>
+          <Route path="/login" element={<Login />} /> 
+          <Route path="/" element={<Welcome />} /> 
+        </Routes>
+        <Footer />
+      </Container>
+    </Context.Provider>
   );
 }
 

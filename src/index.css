@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 :root{
+  --burnt-orange: #b92d2b;
   --black: #000;
   --dark-gray: #737373;
   --darker-gray: #303030;
+  --input-gray: #333;
   --royal-blue: #0071eb;
   --netflix-red: #e50914;
+  --off-white: #e5e5e5;
   --white: #fff;
 }
 
@@ -19,6 +22,10 @@ button.redButton:hover{
   font-weight: 400;
   line-height: normal;
   padding: 7px 17px;
+}
+
+.hide{
+  display: none;
 }
 
 html{
@@ -41,11 +48,79 @@ html{
   width: 100%;
 }
 
-.logo{
+.welcome-logo{
   max-width: 170px;
 }
 
-/* Signin/Signup Section */
+.account-logo{
+  margin-right: 30px;
+  max-width: 100px;
+}
+
+.nav .left-nav a,
+.nav .right-nav a{
+  color: var(--off-white);
+  font-size: 0.925rem;
+  text-decoration: none;
+}
+
+.nav .left-nav a{
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+/* Login Section */
+.login-container{
+  background: url(../public/images/signup_header.jpg) top no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-container::before{
+  content: "";
+  background-color: rgba(0,0,0,.5);
+  height: inherit;
+  width: 100vw;
+  position: absolute;
+}
+
+.login form{
+  background-color: rgba(0,0,0,.7);
+  color: #fff;
+  max-width: 450px;
+  min-height: 660px;
+  padding: 60px 66px 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.login form .form-control,
+.loginButton{
+  border-radius: 4px;
+  padding: 12px !important;
+}
+
+.login .email input,
+.login .password input{
+  background-color: var(--input-gray);
+  border: 0;
+}
+
+.loginButton{
+  background-color: var(--netflix-red) !important;
+  border: 0 !important;
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+  margin: 24px 0 12px;
+}
+
+.remember .form-check-label,
+.google-disclaimer{
+  font-size: 13px !important;
+}
+
+/* Welcome Section */
 
 .top-header{
   font-size: 4rem;
@@ -78,6 +153,20 @@ html{
 .hero-container,
 .sign-in-card{
   border-bottom: 8px solid #222;
+}
+
+.signup{
+  height: 60px;
+  max-width: 800px;
+}
+
+.signup input,
+.signup .redButton{
+  border-radius: 2px;
+}
+
+.signup .redButton{
+  font-size: 1.2rem;
 }
 
 .sign-in-card{
@@ -178,6 +267,10 @@ html{
   max-width: 815px;
 }
 
+.faq-list{
+  padding-left: 0;
+}
+
 .faq-list-item{
   background-color: var(--darker-gray);
   font-size: 1.75rem;
@@ -189,7 +282,7 @@ html{
 
 .faq-list-item .faq-question,
 .faq-list-item .faq-answer{
-  padding: .8em 2.2em;
+  padding: .8em 2.2em .8em 1.2em;
 }
 
 .faq-list-item .faq-question{
@@ -204,7 +297,13 @@ html{
 .faq-list-item .faq-question .plus-icon{
   filter: brightness(0) saturate(100%) invert(99%) sepia(48%) saturate(2%) hue-rotate(323deg) brightness(105%) contrast(101%);
   right: 20px;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform .1s linear;
+}
+
+.faq-list-item .faq-question .plus-icon.open{
+  transform: translateY(-50%) rotate(-45deg);
+  transition: transform .1s linear;
 }
 
 .faq-list-item .faq-answer{
@@ -215,10 +314,6 @@ html{
   display: block
 }
 
-.faq-list-item .faq-question .plus-icon.open{
-  transform: rotate(45deg);
-  transition: transform .8s ease-in-out; 
-}
 
 /* Footer Section*/
 

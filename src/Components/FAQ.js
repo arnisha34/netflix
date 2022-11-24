@@ -1,5 +1,5 @@
 import { Button, Col, Form, InputGroup, Row } from "react-bootstrap"
-import { faqData } from "./FAQData"
+import { faqData } from "../FAQData"
 import {GrAdd} from "react-icons/gr"
 import { useState } from "react"
 import { HiChevronRight } from 'react-icons/hi'
@@ -39,6 +39,10 @@ const FAQ = () => {
                   </li>
                   )})}
               </ul>
+            </Col>
+          </Row>
+          <Row className="hero-content mx-auto">
+            <Col>
               <h5 className="mb-4 text-center">Ready to watch? Enter your email to create or restart your membership.</h5>
               <InputGroup className="mb-3 signup">
                 <Form.Control
