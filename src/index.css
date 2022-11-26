@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 :root{
+  --main-bg-color: #141414;
   --burnt-orange: #b92d2b;
   --black: #000;
   --dark-gray: #737373;
@@ -42,10 +43,16 @@ html{
 
 /* Navigation Section */
 
-.nav{
+.welcome-nav,
+.account-nav{
   position: absolute;
   z-index: 10;
   width: 100%;
+}
+
+.account-nav{
+  background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
+  height: 70px;
 }
 
 .welcome-logo{
@@ -57,14 +64,14 @@ html{
   max-width: 100px;
 }
 
-.nav .left-nav a,
-.nav .right-nav a{
+.account-nav .left-nav a,
+.account-nav .right-nav a{
   color: var(--off-white);
   font-size: 0.925rem;
   text-decoration: none;
 }
 
-.nav .left-nav a{
+.account-nav .left-nav a{
   text-decoration: none;
   margin-right: 20px;
 }
@@ -312,6 +319,83 @@ html{
 
 .faq-list-item .faq-answer.open{
   display: block
+}
+
+/* Home Section */
+
+.featured-bg-image img{
+  width: 100%;
+}
+
+.featured-bg-image::before{
+  content: "";
+  background: linear-gradient(77deg,rgba(0,0,0,.6),transparent 85%);
+  position: absolute;
+  height: 100%;
+  width: 50%;
+}
+
+.featured-info,
+.featured-rating{
+  z-index: 2;
+}
+
+.featured-title{
+  font-size: 5rem;
+  line-height: 4.5rem;
+}
+
+.playButton,
+.infoButton{
+  border-radius: 4px;
+  min-width: 130px;
+  height: 40px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 1.4rem;
+}
+
+.playButton{
+  background-color: var(--white);
+}
+
+.playButton:hover{
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.infoButton{
+  background-color: rgba(109, 109, 110, 0.7);
+}
+
+.infoButton svg{
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(277deg) brightness(100%) contrast(103%);
+}
+
+.infoButton:hover{
+  background-color: rgba(109, 109, 110, 0.4);
+}
+
+.mute,
+.reload,
+.volume{
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.mute{
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(277deg) brightness(100%) contrast(103%);
+}
+
+.featured-rating{
+  bottom: 40%;
+  right: 0;
+}
+
+.featured-rating p{
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 3px solid var(--white);
+  padding: .5vw 3.5vw .5vw .8vw;
 }
 
 

@@ -1,9 +1,12 @@
+import FeaturedVideo from "./FeaturedVideo"
+import { Slider } from "./Slider"
 
 const Home = () => {
   return (
-    <div>
-     <h5>Netflix</h5>
-    </div>
+    <>
+      <FeaturedVideo />
+      <Slider />
+    </>
   )
 }
 

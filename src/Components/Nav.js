@@ -11,7 +11,7 @@ const Nav = () => {
 
   return(
     !ctx.loggedIn ?
-    <Row className="nav px-5 pt-4 align-items-center justify-content-between">
+    <Row className="welcome-nav px-5 pt-4 align-items-center justify-content-between">
       <Col>
         <Link to="/"><img src="../images/netflix-logo.png" alt="Netflix" className="welcome-logo"/></Link>
       </Col>
@@ -19,7 +19,7 @@ const Nav = () => {
         <Link to="login"><Button className="redButton">Sign in</Button></Link>
       </Col>
     </Row> :
-    <Row className="nav px-5 pt-4 align-items-center">
+    <Row className="account-nav px-5 align-items-center position-fixed">
       <Col lg={10}>
         <Link to="/"><img src="../images/netflix-logo.png" alt="Netflix" className="account-logo"/></Link>
         <div className="left-nav d-inline">
@@ -32,7 +32,7 @@ const Nav = () => {
         </div>
       </Col>
       <Col>
-        <div className="right-nav d-flex align-items-center justify-content-between">
+        <div className="right-nav d-flex align-items-center justify-content-evenly">
           <IoSearchSharp fill={'white'} size={25}/>
           <Link>Kids</Link>
           <BiBell fill={'white'} size={25}/>
