@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { Col, Container, Row } from "react-bootstrap"
-import Context from "./Context"
+import {Context} from "./Context"
 import { ImFacebook, ImTwitter, ImYoutube } from 'react-icons/im'
 import { BsInstagram } from 'react-icons/bs'
 

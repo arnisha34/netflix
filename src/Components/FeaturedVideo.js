@@ -1,36 +1,29 @@
-import { useContext } from "react"
 import { Col, Row } from "react-bootstrap"
-import Context from "./Context"
 import { FaPlay } from 'react-icons/fa'
 import { GrCircleInformation, GrVolumeMute } from 'react-icons/gr'
 import { IoReload } from 'react-icons/io5'
 import { ImVolumeHigh } from 'react-icons/im'
 
-const FeaturedVideo = () => {
+const FeaturedVideo = ({featureHeaderID, featureHeader, featureHeaderLargePosterPath}) => {
 
-  const ctx = useContext(Context)
-
-  const id = 505642;
-
-  const filtered = ctx.data.filter(item => item.id === id);
+  const id = featureHeaderID;
   
-  console.log(filtered);
-
-  
+  const filtered = featureHeader.filter(item => item.id === id);
+    
   return (
     
     filtered.map(item => 
-      <Row key={item.id} className="featured-image h-100 position-relative">
-          <div className="featured-bg-image position-absolute">
-            <img src={`${ctx.large_poster_path}${item.poster_path}`} alt="placeholder" />
-          </div>
-        <Col className="featured-info-container d-flex flex-column justify-content-center px-5 text-white" lg={6}>
+      <Row key={item.id} className="featured-container mb-5 position-relative">
+        <div className="featured-bg-image">
+          <img src={`${featureHeaderLargePosterPath}${item.poster_path}`} alt={item.title} />
+        </div>
+        <Col className="featured-info-container position-absolute px-5 text-white">
           <div className="featured-info">
-            <h1 className="featured-title fw-bold">{item.title}</h1>
-            <p>{item.overview}</p>
+            <h1 className="featured-title fw-bold">{item.title == null ? item.name : item.title}</h1>
+            <p className="my-lg-3 my-sm-2 featured-overview">{item.overview.substring(0,125) + "..."}</p>
             <div className="featuredButtons d-flex flex-row">
-              <button className="playButton border-0 me-3 d-flex align-items-center justify-content-center" type="button"><FaPlay className="me-2" size={22}/><span>Play</span></button>
-              <button className="infoButton border-0 d-flex align-items-center justify-content-center text-white" type="button"><GrCircleInformation className="me-2" stroke={"white"} size={25}/><span>More Info</span></button>
+              <button className="playButton border-0 me-3 d-flex align-items-center justify-content-center" type="button"><FaPlay className="me-2"/><span>Play</span></button>
+              <button className="infoButton border-0 d-flex align-items-center justify-content-center text-white" type="button"><GrCircleInformation className="me-2" stroke={"white"} size={24}/><span>More Info</span></button>
             </div>
           </div>
         </Col>
