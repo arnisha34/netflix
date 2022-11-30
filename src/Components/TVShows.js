@@ -1,10 +1,7 @@
 import { useContext } from "react"
 import { Context } from "./Context"
-import AiringToday from "./Categories/AiringToday"
-import OnTheAirTV from "./Categories/OnTheAirTV"
-import PopularTV from "./Categories/PopularTV"
-import TopRatedTV from "./Categories/TopRatedTV"
 import FeaturedVideo from "./FeaturedVideo"
+import { Slider } from "./Slider"
 
 const TVShows = () => {
 
@@ -13,10 +10,10 @@ const TVShows = () => {
   return (
     <>
       <FeaturedVideo featureHeaderID={119051} featureHeader={ctx.topRatedTV} featureHeaderLargePosterPath={ctx.large_poster_path} />
-      <PopularTV />
-      <OnTheAirTV />
-      <AiringToday />
-      <TopRatedTV />
+      <Slider sliderTitle={"Popular TV"} sliderCategory={ctx.popularTV} />
+      <Slider sliderTitle={"On The Air"} sliderCategory={ctx.otaTV} />
+      <Slider sliderTitle={"Airing Today"} sliderCategory={ctx.airingTodayTV} />
+      <Slider sliderTitle={"Top Rated TV"} sliderCategory={ctx.topRatedTV} />
     </>
   )
 }
