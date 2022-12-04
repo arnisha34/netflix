@@ -1,14 +1,14 @@
 import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom"
-import Nav from "./Components/Nav";
-import Welcome from "./Components/Welcome";
-import Home from './Components/Home';
+import Nav from "./nav/nav";
+import Welcome from "./Pages/Welcome";
+import Home from './Pages/Home';
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
 import {Context} from './Components/Context';
 import { useEffect, useState } from "react";
-import TVShows from "./Components/TVShows";
-import Movies from "./Components/Movies";
+import TVShows from "./Pages/TVShows";
+import Movies from "./Pages/Movies";
 import $ from 'jquery'
 
 function App() {
@@ -26,9 +26,6 @@ function App() {
   const [tvVideos, setTVVideos] = useState([])
   const [tvVideoID, setTVVideoID] = useState([])
   const [loggedIn, setLoggedIn] = useState(true)
-
-  const large_poster_path = "https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/";
-  const small_poster_path = "https://image.tmdb.org/t/p/w300_and_h450_bestv2/"
 
   const base = "https://api.themoviedb.org/3/"
 
@@ -79,15 +76,15 @@ function App() {
 
   
   return (
-    <Context.Provider value={{popularMovies, setPopularMovies, popularTV, setPopularTV, nowPlayingMovies, setNowPlayingMovies, topRatedMovies, setTopRatedMovies, airingTodayTV, setAiringTodayTV, upcomingMovies, setUpcomingMovies, otaTV, setOtaTV, topRatedTV, setTopRatedTV, movieVideos, setMovieVideos, tvVideos, setTVVideos, movieVideoID, setMovieVideoID, tvVideoID, setTVVideoID, loggedIn, setLoggedIn, large_poster_path, small_poster_path}}>
-      <Container className="App p-0" fluid>
+    <Context.Provider value={{popularMovies, setPopularMovies, popularTV, setPopularTV, nowPlayingMovies, setNowPlayingMovies, topRatedMovies, setTopRatedMovies, airingTodayTV, setAiringTodayTV, upcomingMovies, setUpcomingMovies, otaTV, setOtaTV, topRatedTV, setTopRatedTV, movieVideos, setMovieVideos, tvVideos, setTVVideos, movieVideoID, setMovieVideoID, tvVideoID, setTVVideoID, loggedIn, setLoggedIn}}>
+      <Container className="App" fluid>
         <Nav />
         <Routes>
           <Route path="/browse" element={<Home />} />
           <Route path="/" element={<Welcome />} />
           <Route path="/login" element={<Login />} /> 
-          <Route path="/tv-shows" element={<TVShows />} />
-          <Route path="/movies" element={<Movies />} />
+          <Route path="browse/tv-shows" element={<TVShows />} />
+          <Route path="/browse/movies" element={<Movies />} />
         </Routes>
         <Footer />
       </Container>

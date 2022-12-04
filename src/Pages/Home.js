@@ -1,15 +1,15 @@
 import { useContext } from "react"
-import { Context } from "./Context"
-import FeaturedVideo from "./FeaturedVideo"
-import { Slider } from "./Slider"
+import { Context } from "../Components/Context"
+import FeaturedVideo from "../Components/FeaturedVideo"
+import { Slider } from "../Components/Slider"
 
-const Home = () => {
+const Home = ({lgPosterPath}) => {
 
   const ctx = useContext(Context)
 
   return (
     <>
-      <FeaturedVideo featureHeaderID={505642} featureHeader={ctx.popularMovies} featureHeaderLargePosterPath={ctx.large_poster_path} />
+      <FeaturedVideo featureHeaderID={505642} featureHeader={ctx.popularMovies} featureHeaderPosterPath={lgPosterPath} />
       <Slider sliderTitle={"Popular on Netflix"} sliderCategory={ctx.popularMovies} />
       <Slider sliderTitle={"Latest Movies"} sliderCategory={ctx.topRatedMovies} />
       <Slider sliderTitle={"Trending Now"} sliderCategory={ctx.upcomingMovies} />

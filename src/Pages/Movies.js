@@ -1,7 +1,7 @@
 import { useContext } from "react"
-import { Context } from "./Context"
-import FeaturedVideo from "./FeaturedVideo"
-import { Slider } from "./Slider"
+import { Context } from "../Components/Context"
+import FeaturedVideo from "../Components/FeaturedVideo"
+import { Slider } from "../Components/Slider"
 
 const Movies = () => {
 
@@ -9,7 +9,7 @@ const Movies = () => {
 
   return (
     <>
-      <FeaturedVideo featureHeaderID={724495} featureHeader={ctx.popularMovies} featureHeaderLargePosterPath={ctx.large_poster_path} />
+      <FeaturedVideo featureHeaderID={724495} featureHeader={ctx.popularMovies} />
       <Slider sliderTitle={"Popular on Netflix"} sliderCategory={ctx.popularMovies} />
       <Slider sliderTitle={"Latest Movies"} sliderCategory={ctx.topRatedMovies} />
       <Slider sliderTitle={"Trending Now"} sliderCategory={ctx.upcomingMovies} />

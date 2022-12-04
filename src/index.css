@@ -4,6 +4,7 @@
   --main-bg-color: #141414;
   --burnt-orange: #b92d2b;
   --black: #000;
+  --black-gray: #181818;
   --dark-gray: #737373;
   --darker-gray: #303030;
   --nav-link-gray: #b3b3b3;
@@ -37,7 +38,7 @@ html{
 
 .App{
   background-color: var(--black);
-  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Navigation Section */
@@ -427,8 +428,6 @@ html{
 
 .featured-rating{
   font-size: 1.1vw;
-  height: 2.4vw;
-  padding: .5vw 0 .5vw .8vw;
   top: 75%;
   right: 0;
 }
@@ -487,60 +486,63 @@ html{
   z-index: 1;
 }
 
-/* .glider-slide{
-  margin-right: 10px;
+.swiper {
+  overflow: visible !important;
 }
 
-.glider-contain{
-  position: relative;
+.swiper-slide {
+  transition: all 300ms ease-in-out;
 }
 
-.glider-next,
-.glider-prev{
-  height: 100%;
+.swiper-slide:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+  transition: all 300ms ease-in-out;
+  transition-delay: 300ms;
+  z-index: 50;
+}
+
+.swiper-slide:hover img{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.swiper-slide img{
+  border-radius: 3px;
+}
+
+.swiper-slide img:hover{
+  transition-delay: 300ms;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.5);
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+  background:rgba(0, 0, 0, 0.5);
+  height: 100% !important;
+  padding: 0 25px;
   width: 50px;
-  transition: background-color 1s ease-in-out;
 }
 
-.glider-next:hover,
-.glider-prev:hover{
-  background-color:rgba(0, 0, 0, 0.5);
-}
-
-.glider-next.disabled, 
-.glider-prev.disabled{
-  display: none;
-} */
-
-.glider-next{
-  top: 0;
+.swiper-button-next{
+  top: 22px !important;
   right: 0 !important;
 }
 
-.slider-wrapper{
+.swiper-button-prev{
+  top: 22px !important;
+  left: 0 !important;
 }
 
-.slider-item{
-  /* aspect-ratio: 3 / 2; */
-  flex: 1 1 0;
-  transition: transform 500ms;
+/*-- Mini Modal --*/
+.mini-modal-container{
+  background: var(--black-gray);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  width: 100%;
+  padding: 20px 20px 40px;
+  z-index: 10;
 }
-
-/* .slider-item:focus,
-.slider-item:hover{
-  transform: scale(1.5);
-  z-index: 1;
-  cursor: pointer;
-} */
-
-.slider-item img{
-  width: 16.6666666%;
-  border-radius: 4px;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-}
-
 
 /* Footer Section*/
 
