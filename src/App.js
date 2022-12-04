@@ -1,15 +1,16 @@
 import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom"
 import Nav from "./nav/nav";
-import Welcome from "./Pages/Welcome";
-import Home from './Pages/Home';
-import Footer from "./Components/Footer";
-import Login from "./Components/Login";
-import {Context} from './Components/Context';
+import Welcome from "./pages/welcome";
+import Home from './pages/home';
+import Footer from "./components/footer";
+import Login from "./components/login";
+import {Context} from './components/context';
 import { useEffect, useState } from "react";
-import TVShows from "./Pages/TVShows";
-import Movies from "./Pages/Movies";
-import $ from 'jquery'
+import TVShows from "./pages/tvShows";
+import Movies from "./pages/movies";
+import axios from "axios";
+
 
 function App() {
 
@@ -73,6 +74,10 @@ function App() {
       .then(data => setTVVideos(data.results))  
 
   },[])
+
+  const getData = async () => {
+    axios.get
+  }
 
   
   return (

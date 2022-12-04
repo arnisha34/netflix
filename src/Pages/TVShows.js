@@ -1,7 +1,7 @@
 import { useContext } from "react"
-import { Context } from "../Components/Context"
-import FeaturedVideo from "../Components/FeaturedVideo"
-import { Slider } from "../Components/Slider"
+import { Context } from "../components/context"
+import FeaturedVideo from "../components/featuredVideo"
+import { Slider } from "../components/slider"
 
 const TVShows = ({lgPosterPath}) => {
 

@@ -1,6 +1,6 @@
 import { Row, Col } from "react-bootstrap";
-import FAQ from "../Components/FAQ";
-import Hero from "../Components/Hero";
+import FAQ from "../components/faq";
+import Hero from "../components/hero";
 
 const Welcome = () => {
   return (

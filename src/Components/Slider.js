@@ -61,7 +61,7 @@ export const Slider = ({sliderTitle, sliderCategory}) => {
                       metadata here
                     </div>
                     <div className="tags">
-                      
+                      {item.genres}
                     </div>
                   </div>
                 </SwiperSlide>

@@ -3,7 +3,7 @@ import { Row, Col, Button} from "react-bootstrap"
 import { IoSearchSharp } from 'react-icons/io5'
 import { BiBell } from 'react-icons/bi'
 import { Link } from "react-router-dom"
-import {Context} from "../Components/Context"
+import {Context} from "../components/context"
 import { Navlinks } from './navlinks'
 
 const Nav = () => {
